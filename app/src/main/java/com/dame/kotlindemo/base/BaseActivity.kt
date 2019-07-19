@@ -14,8 +14,8 @@ import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 
 /**
-created by 姚明亮
-Time：11:44
+ * created by 姚明亮
+ * Time：11:44
  */
 
 //abstract 抽象类，无需对抽象类或抽象成员标注open注解
@@ -55,6 +55,8 @@ abstract class BaseActivity : AppCompatActivity(), EasyPermissions.PermissionCal
 
     /**
      * 打开软键盘
+     *
+     *  as  强制转换
      */
     fun openKeyBord(mEditText: EditText, mContext: Context) {
         val imm = mContext.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
