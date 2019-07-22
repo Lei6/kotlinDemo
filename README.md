@@ -65,12 +65,12 @@ a===b //false,值相等，对象地址不一样<br>
 -----
 较小类型并不是较大类型的子类型，较小的类型不能隐式转换为较大的类型。也就是说不进行显示转换不能把Byte型值赋给一个Int变量
 需要通过toInt方法。每种数据类型都有下面这些方法，可以转换为其他类型：<br>
-*toByte(): Byte<br>
-*toShort(): Short<br>
-*toInt(): Int<br>
-*toLong(): Long<br>
-*toFloat(): Float<br>
-*toDouble(): Double<br>
-*toChar(): Char<br>
+* toByte(): Byte<br>
+* toShort(): Short<br>
+* toInt(): Int<br>
+* toLong(): Long<br>
+* toFloat(): Float<br>
+* toDouble(): Double<br>
+* toChar(): Char<br>
 注：某些情况下可以使用自动类型转化，前提是可根据上下文推断出正确的数据类型而且数学操作符会做相应的重载。例如下面是正确的：<br>
 val l = 1L + 3 // Long + Int => Long
