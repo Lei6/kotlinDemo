@@ -9,6 +9,7 @@ kotlin语法
 变量：var（标识符）：（类型） = （初始化值）<br>
 注：常量与变量都可以没有初始化值，但是在引用前必须初始化，声明是可不指定类型，编译器支持自动类型判断如：<br>
     val b = 1 系统自动推断变量类型为Int
+
 函数定义
 ----
 使用关键字fun，参数格式为：参数：类型<br>
@@ -64,12 +65,12 @@ a===b //false,值相等，对象地址不一样<br>
 -----
 较小类型并不是较大类型的子类型，较小的类型不能隐式转换为较大的类型。也就是说不进行显示转换不能把Byte型值赋给一个Int变量
 需要通过toInt方法。每种数据类型都有下面这些方法，可以转换为其他类型：<br>
-toByte(): Byte
-toShort(): Short
-toInt(): Int
-toLong(): Long
-toFloat(): Float
-toDouble(): Double
+toByte(): Byte<br>
+toShort(): Short<br>
+toInt(): Int<br>
+toLong(): Long<br>
+toFloat(): Float<br>
+toDouble(): Double<br>
 toChar(): Char<br>
 注：某些情况下可以使用自动类型转化，前提是可根据上下文推断出正确的数据类型而且数学操作符会做相应的重载。例如下面是正确的：<br>
 val l = 1L + 3 // Long + Int => Long
