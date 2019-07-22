@@ -14,22 +14,22 @@ kotlin语法
 ----
 使用关键字fun，参数格式为：参数：类型<br>
 
-有返回值：fun sum（a:Int，b:Int）:Int{
-             return a+b
-          }
-无返回值：fun printSum(a:Int,b:Int):Unit{
-              print(a+b)
-          }
-表达式作为函数体，返回类型自动推断：
+有返回值：fun sum（a:Int，b:Int）:Int{<br>
+             return a+b<br>
+          }<br>
+无返回值：fun printSum(a:Int,b:Int):Unit{<br>
+              print(a+b)<br>
+          }<br>
+表达式作为函数体，返回类型自动推断：<br>
           fun sum(a:Int,b:Int) = a+b
 
-注：public方法则必须明确写出返回类型
-          public fun sum (a:Int,b:Int):Int = a+b
+注：public方法则必须明确写出返回类型<br>
+          public fun sum (a:Int,b:Int):Int = a+b<br>
     如果返回Unit类型，则可以省略，public方法也一样
 
 可变长参数函数
 -----
-函数变长参数可以用vararg关键字进行标识：
+函数变长参数可以用vararg关键字进行标识：<br>
 fun vars(vararg v:Int){
 }
 

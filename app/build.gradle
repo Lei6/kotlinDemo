@@ -44,5 +44,7 @@ dependencies {
     api 'com.google.code.gson:gson:2.8.2'
     // logger
     api 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    implementation 'com.orhanobut:logger:2.1.1'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
 }
