@@ -46,6 +46,7 @@ class Preference<T>(val name:String, private val default:T) {
         putSharedPreferences(name, value)
     }
 
+    //with  某对象作为函数的参数，在函数块内可以通过 this 指代该对象。
     @SuppressLint("CommitPrefEdits")
     private fun putSharedPreferences(name: String, value: T) = with(prefs.edit()) {
         when (value) {
@@ -58,6 +59,7 @@ class Preference<T>(val name:String, private val default:T) {
         }.apply()
     }
 
+    //检测一个值是（is）或者不是（!is）一个特定类型的值。
     @Suppress("UNCHECKED_CAST")
     private fun getSharedPreferences(name: String, default: T): T = with(prefs) {
         val res: Any? = when (default) {
