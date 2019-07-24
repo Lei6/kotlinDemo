@@ -1,6 +1,7 @@
 package com.dame.kotlindemo.base
 
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 import java.lang.RuntimeException
 
 /**
@@ -33,6 +34,10 @@ open class BasePresenter<T : IBaseView> : IPresenter<T> {
 
     fun checkViewAttached(){
         if (!isViewAttached)throw MvpViewNotAttachedException()
+    }
+
+    fun addSubscription(disposable: Disposable) {
+        compositeDisponsable.add(disposable)
     }
 
     /**

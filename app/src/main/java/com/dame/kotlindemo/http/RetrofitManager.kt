@@ -41,17 +41,17 @@ object RetrofitManager {
     /**
      * 设置头
      */
-    private fun addHeaderInterceptor(): Interceptor {
-        return Interceptor { chain ->
-            val originalRequest = chain.request()
-            val requestBuilder = originalRequest.newBuilder()
-                // Provide your custom header here
-                .header("token", token)
-                .method(originalRequest.method(), originalRequest.body())
-            val request = requestBuilder.build()
-            chain.proceed(request)
-        }
-    }
+//    private fun addHeaderInterceptor(): Interceptor {
+//        return Interceptor { chain ->
+//            val originalRequest = chain.request()
+//            val requestBuilder = originalRequest.newBuilder()
+//                // Provide your custom header here
+//                .header("token", token)
+//                .method(originalRequest.method(), originalRequest.body())
+//            val request = requestBuilder.build()
+//            chain.proceed(request)
+//        }
+//    }
 
     /**
      * 设置缓存
@@ -107,7 +107,7 @@ object RetrofitManager {
 
         return OkHttpClient.Builder()
 //            .addInterceptor(addQueryParameterInterceptor())  //参数添加
-            .addInterceptor(addHeaderInterceptor()) // token过滤
+//            .addInterceptor(addHeaderInterceptor()) // token过滤
 //              .addInterceptor(addCacheInterceptor())
             .addInterceptor(httpLoggingInterceptor) //日志,所有的请求响应度看到
             .cache(cache)  //添加缓存

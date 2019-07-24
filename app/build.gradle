@@ -13,6 +13,16 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+//        // 实现毛玻璃那种透明的效果需要添加的库
+//        renderscriptTargetApi 19
+//        renderscriptSupportModeEnabled true    // Enable RS support
+
+//        ndk {
+//
+//            //APP的build.gradle设置支持的SO库架构
+//            abiFilters 'armeabi', 'armeabi-v7a', 'x86'
+//        }
     }
     buildTypes {
         release {
@@ -42,11 +52,25 @@ dependencies {
     api 'com.squareup.retrofit2:converter-gson:2.1.0'
     api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
     api 'com.google.code.gson:gson:2.8.2'
+
+    //rxjava
+    api 'com.trello.rxlifecycle2:rxlifecycle:2.2.0'
+    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.0'
     // logger
     api 'com.squareup.okhttp3:logging-interceptor:3.10.0'
     implementation 'com.orhanobut:logger:2.1.1'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
+    // 底部菜单
+    implementation('com.flyco.tablayout:FlycoTabLayout_Lib:2.1.0@aar') {
+        exclude group: 'com.android.support', module: 'support-v4'
+    }
+
+    implementation 'com.youth.banner:banner:1.4.10'
+
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+
     //模糊透明 View
-    implementation 'com.github.mmin18:realtimeblurview:1.1.0'
+//    implementation 'com.github.mmin18:realtimeblurview:1.1.0'
 }

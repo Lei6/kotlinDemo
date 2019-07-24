@@ -5,7 +5,7 @@ kotlinDemo
 
 高阶函数
 -----
-参考链接 https://blog.csdn.net/u013064109/article/details/78786646#3
+参考链接 https://blog.csdn.net/u013064109/article/details/78786646#3<br>
 forEach 遍历集合对象的功能<br>
 let 1、实际上是一个作用域函数，定义一个变量在一个特定的作用域范围内 2、表示object不为null的条件下，才会去执行let函数体<br>
 with 将某对象作为函数的参数，在函数块内可以通过 this 指代该对象<br>
@@ -14,6 +14,14 @@ val result = with(user) {
         //直接调用即可
         println("my name is $name, I am $age years old, my phone number is $phoneNum")
     }
+~~~
+until  相当于闭区间 从0到size-1<br>
+mapTo将给定的变换函数应用于原始数组的每个元素，并将结果附加到给定目标。<br>
+~~~
+ (0 until mTitles.size)
+            .mapTo(mTabEntities) {
+                TabEntity(mTitles[it], mIconSelectIds[it], mIconUnSelectIds[it])
+            }
 ~~~
 
 kotlin语法
@@ -27,12 +35,18 @@ kotlin语法
 ----
 使用关键字fun，参数格式为：参数：类型<br>
 
-有返回值：fun sum（a:Int，b:Int）:Int{<br>
-             return a+b<br>
-          }<br>
-无返回值：fun printSum(a:Int,b:Int):Unit{<br>
-              print(a+b)<br>
-          }<br>
+有返回值：
+~~~
+fun sum（a:Int，b:Int）:Int{
+             return a+b
+          }
+~~~
+无返回值：
+~~~
+fun printSum(a:Int,b:Int):Unit{
+              print(a+b)
+          }
+~~~
 表达式作为函数体，返回类型自动推断：<br>
           fun sum(a:Int,b:Int) = a+b
 
@@ -92,17 +106,18 @@ val l = 1L + 3 // Long + Int => Long
 数组
 -----
 数组的创建两种方式：一种是使用函数arrayOf()；另外一种是使用工厂函数。如下所示，我们分别是两种方式创建了两个数组：<br>
-fun main(args: Array<String>) {<br>
+~~~
+fun main(args: Array<String>) {
     //[1,2,3]<br>
     val a = arrayOf(1, 2, 3)<br>
-    //[0,2,4]  i相当于索引位置从0开始，3应该是数组长度 <br>
-    val b = Array(3, { i -> (i * 2) })<br>
+    //[0,2,4]  i相当于索引位置从0开始，3应该是数组长度
+    val b = Array(3, { i -> (i * 2) })
 
     //读取数组内容<br>
-    println(a[0])    // 输出结果：1<br>
-    println(b[1])    // 输出结果：2<br>
+    println(a[0])    // 输出结果：1
+    println(b[1])    // 输出结果：2
 }
-
+~~~
 字符串()
 ----
 Kotlin 支持三个引号 """ 扩起来的字符串，支持多行字符串，比如：<br>
@@ -289,15 +304,19 @@ init {
         // 初始化...
     }
 ~~~
+
 抽象类
 ----
+
 ~~~
 abstract class HolderImageLoader(val path: String) {
         abstract fun loadImage(iv: ImageView, path: String)
     }
     ~~~
+
 嵌套类
-----
+------
+
 ~~~
 class Outer {                  // 外部类
     private val bar: Int = 1
@@ -307,10 +326,12 @@ class Outer {                  // 外部类
 }
 ~~~
 
+
 内部类
 ----
 内部类使用 inner 关键字来表示<br>
-内部类会带有一个对外部类的对象的引用，所以内部类可以访问外部类成员属性和成员函数。<br>
+内部类会带有一个对外部类的对象的引用，所以内部类可以访问外部类成员属性和成员函数。
+
 ~~~
 class Outer {
     private val bar: Int = 1
@@ -325,6 +346,8 @@ class Outer {
     }
 }
 ~~~
+
+
 修饰符
 ------
 * 属性修饰符

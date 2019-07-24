@@ -14,5 +14,5 @@ object Constant {
      * const只能在object类中或者伴生对象companion object中使用
      * const的效果等于@JvmField，两者不能同时使用
      */
-    const val BASE_URL = "http://baobab.kaiyanapp.com/api/"
+    const val BASE_URL = "https://www.wanandroid.com"
 }
