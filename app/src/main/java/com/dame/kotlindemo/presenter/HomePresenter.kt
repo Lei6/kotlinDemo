@@ -10,6 +10,23 @@ import com.dame.kotlindemo.model.HomeModel
  *Time：2019/7/24 15:07
  */
 class HomePresenter : BasePresenter<HomoContract.HomeView>(), HomoContract.HomeP {
+    override fun requestHomeList(page: String) {
+        checkViewAttached()
+//        mRootView?.showLoading()
+        val disposable = homeModel.getHomeListData(page)
+            .subscribe({
+                    ass->
+                mRootView?.apply {
+                    hideLoading()
+                    showHomeList(ass.data)
+                }
+            },{
+                mRootView?.showError(ExceptionHandle.handleException(it),ExceptionHandle.errorCode)
+            })
+
+        addSubscription(disposable)
+
+    }
 
     private val homeModel: HomeModel by lazy {
         HomeModel()
@@ -34,6 +51,19 @@ class HomePresenter : BasePresenter<HomoContract.HomeView>(), HomoContract.HomeP
     }
 
     override fun loadMoreData(page: String) {
+        checkViewAttached()
+//        mRootView?.showLoading()
+        val disposable = homeModel.getHomeListData(page)
+            .subscribe({
+                mRootView?.apply {
+//                    hideLoading()
+                    showHomeList(it.data)
+                }
+            },{
+                mRootView?.showError(ExceptionHandle.handleException(it),ExceptionHandle.errorCode)
+            })
+
+        addSubscription(disposable)
 
     }
 }
