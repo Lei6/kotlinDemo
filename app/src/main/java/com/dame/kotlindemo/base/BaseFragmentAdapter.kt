@@ -37,7 +37,7 @@ class BaseFragmentAdapter : FragmentPagerAdapter {
             fragmentList?.forEach {
                 ft.remove(it)
             }
-            ft?.commitAllowingStateLoss()
+            ft.commitAllowingStateLoss()
             fm.executePendingTransactions()
         }
         this.fragmentList = fragments
