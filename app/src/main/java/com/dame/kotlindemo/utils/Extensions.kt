@@ -7,9 +7,6 @@ import androidx.fragment.app.Fragment
 import com.dame.kotlindemo.MyApplication
 
 
-/**
- * Created by xuhao on 2017/11/14.
- */
 
 fun Fragment.showToast(content: String): Toast {
     val toast = Toast.makeText(this.activity?.applicationContext, content, Toast.LENGTH_SHORT)

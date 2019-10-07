@@ -139,7 +139,7 @@ class MainActivity : BaseActivity() {
                 finish()
             } else {
                 mExitTime = System.currentTimeMillis()
-                showToast("aa")
+                showToast("再按一次返回")
             }
             return true
         }

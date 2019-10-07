@@ -1,6 +1,8 @@
 package com.dame.kotlindemo.adapter
 
 import android.content.Context
+import android.view.View
+import android.widget.Toast
 import com.dame.kotlindemo.R
 import com.dame.kotlindemo.adapter.viewholder.ViewHolder
 import com.dame.kotlindemo.bean.HomeListBean
@@ -24,5 +26,8 @@ class HomeListAdapter(mContext: Context, homeList: ArrayList<HomeListBean.DataBe
         holder.setText(R.id.tv_title,"${data.title}")
         holder.setText(R.id.tv_auc,"作者：${data.author}")
         holder.setText(R.id.tv_time,"时间：${data.niceDate}")
+        holder.setOnItemClickListener(View.OnClickListener {
+            Toast.makeText(mContext,"${data.title}",Toast.LENGTH_LONG).show()
+        })
     }
 }
