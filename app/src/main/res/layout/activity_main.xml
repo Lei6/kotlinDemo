@@ -18,12 +18,6 @@
             android:background="@color/color_gray"/>
 
 
-    <!--<com.github.mmin18.widget.RealtimeBlurView-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="50dp"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:background="@color/color_title_bg"-->
-    <!--/>-->
 
     <com.flyco.tablayout.CommonTabLayout
             android:id="@+id/tab_layout"

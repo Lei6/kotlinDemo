@@ -412,3 +412,18 @@ class C() : A() , B{
     }
 }
 ~~~
+
+
+*注解
+@JvmOverloads
+____
+Kotlin中@JvmOverloads注解的作用就是：在有默认参数值的方法中使用@JvmOverloads注解，则Kotlin就会暴露多个重载方法<br>
+~~~
+class FoldedTextView @JvmOverloads constructor(context: Context?, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : AppCompatTextView(context, attrs, defStyleAttr) {
+
+}
+~~~
+
+@JvmField
+____
+实际上为常量必须使用@JvmStatic 注解才能暴露为静态方法,@JvmField的效果等于const，两者不能同时使用
